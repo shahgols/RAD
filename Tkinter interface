@@ -1,0 +1,39 @@
+import tkinter as tk
+
+root = tk.Tk()
+root.geometry("320x240")
+root.title("Cash Safe")
+#color info
+light_blue = (97, 137, 183)
+color_string = "#%02x%02x%02x" % light_blue
+
+
+
+# Root background info
+
+canvas = tk.Canvas(root, bg=color_string, width=320, height=240)
+canvas.pack(expand=True)
+
+# Text
+text_frame = tk.Frame(root, width=221, height=70)
+text_frame.place(x=72, y=12)
+
+text_label = tk.Label(text_frame, text="SMRT BOX", font=("Bold", 32), bg=color_string, fg="white")
+text_label.pack(fill=tk.BOTH, expand=True)
+
+# Image
+image_frame = tk.Frame(root, width=121.59, height=154.76)
+image_frame.place(x=91, y=64)
+
+image_label = tk.Label(image_frame, bg="white")
+image_label.pack(fill=tk.BOTH, expand=True)
+
+image = tk.PhotoImage(file="image.png")
+image_label.config(image=image)
+image_label.image = image
+
+# Apply filter to the image
+image_label.config(highlightthickness=0, bd=0)
+image_label.bind("<Configure>", lambda e: image_label.config(width=e.width, height=e.height))
+
+root.mainloop()
