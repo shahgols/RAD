@@ -37,30 +37,13 @@ def display_input(money_input):
 
     label2_frame = tk.Frame(root, width=200, height=154.76)
     label2_frame.place(x=400, y=320, anchor="center")
-    label2 = tk.Label(label2_frame, text=money_input, font=("Helvetica", 80), bg=color_string, fg="black")
+    label2 = tk.Label(label2_frame, text=money_input, font=("Helvetica", 70), bg=color_string, fg="black")
     label2.pack(fill=tk.BOTH, expand=True)
 
 
 #money input info
-money_input = camera()
+money_input = camera()#fix this
 display_input(money_input)
-'''def hide_image():
-    image_frame.pack_forget()
-    image_label.pack_forget()
 
-    root.after(3000, show_image)
-
-# function to show the image
-def show_image():
-    image_frame.place(x=270, y=280)
-    image_label.pack(fill=tk.BOTH, expand=True)
-    image_label.config(highlightthickness=0, bd=0)
-    image_label.bind("<Configure>", lambda e: image_label.config(width=e.width, height=e.height))'''
-
-#money_input = None
-#money_input = camera() --> uncomment
-#money_input = "1234"#comment this out
-'''if money_input:
-    display_input(money_input)'''
 
 root.mainloop()
